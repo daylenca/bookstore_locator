@@ -1,0 +1,16 @@
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#account {
+  grid-column: 1/ span 1;
+}
+
+#businesses {
+  grid-column: 2/ span 1;
+}
+
+#home {
+  grid-column: 3/ span 1;
+}
