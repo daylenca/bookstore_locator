@@ -14,3 +14,9 @@ footer {
 #home {
   grid-column: 3/ span 1;
 }
+
+footer {
+  display: grid;
+  grid-column: 3/ span 1;
+  grid-template-areas: "account businesses home";
+}
