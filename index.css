@@ -1,22 +1,7 @@
-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-#account {
-  grid-column: 1/ span 1;
-}
-
-#businesses {
-  grid-column: 2/ span 1;
-}
-
-#home {
-  grid-column: 3/ span 1;
-}
-
-footer {
-  display: grid;
-  grid-column: 3/ span 1;
-  grid-template-areas: "account businesses home";
+/* Set the size of the div element that contains the map */
+#map {
+  height: 390px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
