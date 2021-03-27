@@ -3,6 +3,12 @@
     margin-bottom: 20pt;
 }
 
+/* Aligns map search bar to the right (not working) */
+.input-group {
+    position: absolute;
+    float: right;
+}
+
 /* Set the size of the div element that contains the map */
 #map {
     height: 390px;
