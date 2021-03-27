@@ -48,9 +48,18 @@
         <h2>Find independent bookstores near you</h2>
         <a role="button" href="login.html" class="btn btn-primary">Login/Register</a>
     </div>
-
-    <div id="map"></div>
-
+    <div id="mapbox" class="container">
+        <div class="input-group">
+            <label for="search-box">Search&nbsp;</label>
+            <div class="form-outline">
+                <input type="search" id="search-box" class="form-control"/>
+            </div>
+            <button type="button" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <div id="map"></div>
+    </div>
     <footer>
         <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
             <a class="navbar-brand" href="account.html">
