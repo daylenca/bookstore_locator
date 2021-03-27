@@ -1,0 +1,16 @@
+body {
+    background-color: #296A72;
+    color: #F3DEC0;
+}
+
+a, .navbar-toggler, .navbar-toggler-icon, .navbar-nav, #navbarNav {
+    color: #DCBDA7;
+}
+
+.click {
+    background-color: #DCBDA7;
+}
+
+nav {
+    background-color: #1C162D;
+}

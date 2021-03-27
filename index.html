@@ -13,16 +13,17 @@
     <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Optional styles and scripts of your own -->
+    <link href="styles/bootstrap-color.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">LocalReads</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
@@ -46,7 +47,7 @@
     <div id="intro" class="container">
         <h1 class="display-4">LocalReads</h1>
         <h2>Find independent bookstores near you</h2>
-        <a role="button" href="login.html" class="btn btn-primary">Login/Register</a>
+        <a role="button" href="login.html" class="btn click">Login/Register</a>
     </div>
     <div id="mapbox" class="container">
         <div class="input-group">
@@ -54,14 +55,14 @@
             <div class="form-outline">
                 <input type="search" id="search-box" class="form-control"/>
             </div>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn click">
                 <i class="bi bi-search"></i>
             </button>
         </div>
         <div id="map"></div>
     </div>
     <footer>
-        <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+        <nav class="navbar fixed-bottom text-center">
             <a class="navbar-brand" href="account.html">
                 <div id="account">
                     <i class="bi bi-person-circle"></i>
@@ -89,7 +90,25 @@
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmly4dsny5PxlNnvAuHjwXM5iVE6_psCA&callback=initMap">
     </script>
-    
+    <!-- Search functionality -->
+    <script>
+        function getBusiness(){
+            document.getElementById("submit").addEventListener('click', function () {
+                var id = document.getElementById("id").value;
+                console.log(id);
+            db.collection("businesses")
+            .where("name", "==", location)
+            .get()
+            .then(function (snap) {
+                snap.forEach(function(doc) {
+                    console.log(doc.data());
+                    //do something with the data
+                })
+            })
+            })
+        }
+        getCity();
+    </script>
 </body>
 
 </html>
