@@ -1,3 +1,7 @@
+body {
+    background-color: #296A72;
+}
+
 /* Adds a bottom margin to the intro container on index.html */
 #intro {
     margin-bottom: 20pt;
