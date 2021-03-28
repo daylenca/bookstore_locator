@@ -1,15 +1,24 @@
-var target = document.querySelector("#businessListings");
+var target = document.getElementById("businessListings");
 
 
 function displayBusinesses(){
   var size = 1;
   for(let i = 0; i <= size; i++) {
-    target.innerHTML = "<button type='button'class='collapsible'><span id='name'>Open Collapsible</span></button><div class='content'><p id='bizInfo'><p></div>";
+    var button = document.createElement("BUTTON");
+    var buttonInfo = document.createElement("div");
+    buttonInfo.setAttribute('class', "content");
+    buttonInfo.innerHTML = "<p id='bizInfo'>Test</p>";
+    button.innerHTML = "<span id='name'>Open Collapsible</span>";
+    button.setAttribute('type', 'button');
+    button.setAttribute('class', 'collapsible');
+    target.appendChild(button);
+    target.appendChild(buttonInfo);
   }
   db.collection("businesses").get()
-    .then(function(snap){
-        snap.forEach(function(doc){
+    .then(function(snapshot){
+        snapshot.forEach(function(doc){
           var n = doc.data().name;
+          console.log(n);
           var city = doc.data().city;
           var prov = doc.data().province;
           var phone = doc.data().phoneNumber;
