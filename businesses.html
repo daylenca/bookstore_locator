@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LocalReads</title>
+    <meta name="author" content="Cody and Daylen">
+    <link href="styles/businesses.css" rel="stylesheet">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Optional styles and scripts of your own -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LocalReads</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add.html">Add a Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="title" class="container">
+        <h1 class="display-4">Local Bookstores</h1>
+    </div>
+    <div id="businessListings">
+    </div>
+    <footer>
+        <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+            <a class="navbar-brand" href="account.html">
+                <div id="account">
+                    <i class="bi bi-person-circle"></i>
+                    <h5>Account</h5>
+                </div>
+            </a>
+            <a class="navbar-brand" href="businesses.html">
+                <div id="businesses">
+                    <i class="bi bi-shop"></i>
+                    <h5>Businesses</h5>
+                </div>
+            </a>
+            <a class="navbar-brand" href="index.html">
+                <div id="home">
+                    <i class="bi bi-house-door-fill"></i>
+                    <h5>Home</h5>
+                </div>
+            </a>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="firebase_api_bookstore.js"></script>
+    <script src="scripts/businesses.js"></script>
+    
+</body>
+
+</html>
