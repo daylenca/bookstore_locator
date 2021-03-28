@@ -14,3 +14,7 @@ a, .navbar-toggler, .navbar-toggler-icon, .navbar-nav, #navbarNav {
 nav {
     background-color: #1C162D;
 }
+
+.delete {
+    background-color: #DC3545;
+}
