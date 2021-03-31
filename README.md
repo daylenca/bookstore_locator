@@ -1,4 +1,4 @@
-## My Web Application (Title)
+## LocalReads
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -11,8 +11,10 @@ This browser based web application to ...
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
-* Bootstrap 
-* ...
+* Bootstrap (+ Bootstrap Icons)
+* Google Maps API
+* Google Fonts
+* Firebase (Firestore, authentication, hosting)
 	
 ## Content
 Content of the project folder:

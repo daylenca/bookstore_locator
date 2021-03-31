@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vollkorn:wght@700&display=swap');
+
 body {
     background-color: #296A72;
     color: #F3DEC0;
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Vollkorn', serif;
 }
 
 a, .navbar-toggler, .navbar-toggler-icon, .navbar-nav, #navbarNav {

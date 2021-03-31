@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LocalReads</title>
+    <title>Add a Bookstore | LocalReads</title>
     <meta name="author" content="Cody and Daylen">
     <link href="styles/styles.css" rel="stylesheet">
 
@@ -13,13 +13,14 @@
     <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Optional styles and scripts of your own -->
+    <link href="styles/bootstrap-color.css" rel="stylesheet">
 
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LocalReads</a>
+            <a class="navbar-brand" href="index.html">LocalReads</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,13 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add.html">Add a Business</a>
+                        <a class="nav-link active" aria-current="page" href="add.html">Add a Bookstore</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="settings.html">Settings</a>
@@ -42,7 +43,9 @@
             </div>
         </div>
     </nav>
-
+    <div id="title" class="container">
+      <h1 class="display-4">Add a Bookstore</h1>
+  </div>
     <div id="businessForm" class="container">
       <form id="addBusinessForm">
         <div class="form-row">
@@ -62,9 +65,8 @@
           <div class="form-group col-md-4">
             <label for="Province">Province/Territory</label>
             <select name="inputProvince" class="form-control">
-              <option selected>Choose...</option>
               <option>Alberta</option>
-              <option>British Columbia</option>
+              <option selected>British Columbia</option>
               <option>Manitoba</option>
               <option>New Brunswick</option>
               <option>Newfoundland</option>
@@ -84,12 +86,12 @@
             <input type="text" class="form-control" name="inputPostalCode">
           </div>
           <div class="form-group col-md-2">
-            <label for="PhoneNumber">Phone Number</label>
-            <input type="text" class="form-control" name="inputPhoneNumber">
+            <label for="PhoneNumber">Phone Number (no spaces)</label>
+            <input type="tel" pattern="^\d{10}$" class="form-control" name="inputPhoneNumber">
           </div>
           <div class="form-group col-md-2">
             <label for="Website">Website</label>
-            <input type="text" class="form-control" name="inputWebsite">
+            <input type="url" class="form-control" name="inputWebsite">
           </div>
         </div>
         <div class="form-group">
@@ -125,8 +127,8 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
-    <script src="firebase_api_bookstore.js"></script>
-    <script src="add.js"></script>
+    <script src="scripts/firebase-api-bookstore.js"></script>
+    <script src="scripts/add.js"></script>
     
 </body>
 
