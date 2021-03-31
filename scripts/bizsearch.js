@@ -30,8 +30,12 @@ function getDetails() {
 }
 getDetails();
 
-// example from mozilla website
-// https://some.site/?id=123
-const parsedUrl = new URL(window.location.href);
-console.log(parsedUrl.searchParams.get("id")); // "123"
+function openForm() {
+  document.getElementById("reviewForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("reviewForm").style.display = "none";
+}
+
 
