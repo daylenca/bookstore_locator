@@ -30,3 +30,12 @@ function getDetails() {
 }
 getDetails();
 
+function openForm() {
+  document.getElementById("reviewForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("reviewForm").style.display = "none";
+}
+
+

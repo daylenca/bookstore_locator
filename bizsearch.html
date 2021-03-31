@@ -6,11 +6,13 @@
     <title>Search | LocalReads</title>
     <meta name="author" content="Cody and Daylen">
     <link href="styles/businesses.css" rel="stylesheet">
+    <link href="styles/bizsearch.css" rel="stylesheet">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional styles and scripts of your own -->
     <link href="styles/bootstrap-color.css" rel="stylesheet">
@@ -45,6 +47,111 @@
         <h1 class="display-4">Local Bookstores</h1>
     </div>
     <div id="details-go-here"></div>
+    <div id="reviewSection">
+        <span class="heading">Average User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <button onclick="openForm()">Add Review</button>
+        <div class="form-popup" id="reviewForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Leaving a Review</h1>
+                <div class="ratingScale">
+                    <label for="productSelection"><b>Product Selection</b></label>
+                    <input type="radio" placeholder="productSelRating" value="1">
+                    <input type="radio" placeholder="productSelRating" value="2">
+                    <input type="radio" placeholder="productSelRating" value="3">
+                    <input type="radio" placeholder="productSelRating" value="4">
+                    <input type="radio" placeholder="productSelRating" value="5">
+                </div>
+                <div class="ratingScale">
+                    <label for="affordability"><b>Affordability</b></label>
+                    <input type="radio" placeholder="affordRating" value="1">
+                    <input type="radio" placeholder="affordRating" value="2">
+                    <input type="radio" placeholder="affordRating" value="3">
+                    <input type="radio" placeholder="affordRating" value="4">
+                    <input type="radio" placeholder="affordRating" value="5">
+                </div>
+                <div class="ratingScale">
+                    <label for="customerService"><b>Customer Service</b></label>
+                    <input type="radio" placeholder="customerServRating" value="1">
+                    <input type="radio" placeholder="customerServRating" value="2">
+                    <input type="radio" placeholder="customerServRating" value="3">
+                    <input type="radio" placeholder="customerServRating" value="4">
+                    <input type="radio" placeholder="customerServRating" value="5">
+                </div>
+                <div class="ratingScale">
+                    <label for="knowledgeable"><b>Knowledgeable</b></label>
+                    <input type="radio" placeholder="knowledgeRating" value="1">
+                    <input type="radio" placeholder="knowledgeRating" value="2">
+                    <input type="radio" placeholder="knowledgeRating" value="3">
+                    <input type="radio" placeholder="knowledgeRating" value="4">
+                    <input type="radio" placeholder="knowledgeRating" value="5">
+                </div>
+            </form>
+          </div>
+        <hr style="border:3px solid #f1f1f1">
+
+        <div class="row">
+            <div class="side">
+                <div>Product Selection</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-5"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>150</div>
+            </div>
+            <div class="side">
+                <div>Affordability</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-4"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>63</div>
+            </div>
+            <div class="side">
+                <div>Payment Options</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-3"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>15</div>
+            </div>
+            <div class="side">
+                <div>Customer Service</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-2"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>6</div>
+            </div>
+            <div class="side">
+                <div>Knowledgeable</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-1"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>20</div>
+            </div>
+        </div>
+    </div>
     <footer>
         <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
             <a class="navbar-brand" href="account.html">
@@ -76,7 +183,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/businesses.js"></script>
     <script src="scripts/bizsearch.js"></script>
-    
+
 </body>
 
 </html>
