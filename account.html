@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Optional styles and scripts of your own -->
     <link href="styles/bootstrap-color.css" rel="stylesheet">
@@ -44,12 +45,12 @@
         <h1 class="display-4">Account</h1>
         <h2>Personal Information</h2>
         <p>Name: <div id="username"></div></p>
-        <p>Email: <div id="email"></div></p>
-        <a role="button" href="" class="btn click delete">Delete account</a>
+        <p>Email: <div id="emailAddress"></div></p>
+        <a role="button" onclick="deleteAccount()" class="btn click delete">Delete account</a>
     </div>
     <footer>
         <nav class="navbar fixed-bottom text-center">
-            <a class="navbar-brand" href="account.html">
+            <a class="navbar-brand" href="#">
                 <div id="account">
                     <i class="bi bi-person-circle"></i>
                     <h5>Account</h5>
@@ -72,21 +73,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="scripts/firebase-api-bookstore.js"></script>
     <script>
         function userInfo(){
             db.collection("users").get()
             .then(function(snap){
                 snap.forEach(function(doc){
-                    var n = doc.data().name;             //gets the name field
-                    console.log(n);
-                    var cityid = doc.data().code;        //gets the unique ID field
-                    console.log(cityid);
-                    document.getElementById(cityid).innerText = n;
+                    var name = doc.data().name;             //gets the name field
+                    console.log(name);
+                    var email = doc.data().email;        //gets the unique ID field
+                    console.log(email);
+                    document.getElementById(username).innerText = name;
+                    document.getElementById(emailAddress).innerText = email;
+                    $("#username").text(name);
+                    $("#emailAddress").text(email);
                 })
-
             })
         }
-    userInfo();
+        userInfo();
+
+        function deleteAccount(){
+            var user = firebase.auth().currentUser;
+            var credential;
+            user.reauthenticateWithCredential(credential).then(function() {
+            // User re-authenticated.
+            }).catch(function(error) {
+            // An error happened.
+            });
+        }
     </script>
 </body>
 </html>
