@@ -3,7 +3,7 @@ const businessForm = document.querySelector('#addBusinessForm');
     e.preventDefault();
     db.collection('businesses').add({
       name: businessForm.inputBusinessName.value,
-      streetaddress: businessForm.inputAddress.value,
+      streetAddress: businessForm.inputAddress.value,
       city: businessForm.inputCity.value,
       province: businessForm.inputProvince.value,
       postalCode: businessForm.inputPostalCode.value,

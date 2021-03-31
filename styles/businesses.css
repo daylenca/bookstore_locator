@@ -1,0 +1,20 @@
+#container {
+  overflow: scroll;
+}
+
+p {
+  background-color: #160F29;
+  color: #F3DFC1;
+  border-radius: 5px;
+  padding-left: 5px;
+  text-align: center;
+  font-size: 3em;
+}
+
+p:hover {
+  background-color: #DDBEA8;
+}
+
+#title {
+  text-align: center;
+}
