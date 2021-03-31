@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vollkorn:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vollkorn:wght@400;600&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
 
 body {
     background-color: #296A72;
     color: #F3DEC0;
-    font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+.navbar-brand, h1, h2 {
     font-family: 'Vollkorn', serif;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Vollkorn', serif;
+    font-weight: 500;
 }
 
 a, .navbar-toggler, .navbar-toggler-icon, .navbar-nav, #navbarNav {
@@ -24,4 +33,12 @@ nav {
 
 .delete {
     background-color: #DC3545;
+}
+
+.fixed-bottom > .navbar-brand {
+    margin-left: 10px;
+}
+
+.container {
+    margin-top: 10pt;
 }
