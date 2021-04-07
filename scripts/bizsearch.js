@@ -53,9 +53,10 @@ const reviewForm = document.querySelector('#reviewAdd');
 function addReview() {
     db.collection('reviews').add({
     bizID: id,
-    affordability: reviewForm.affordability.value,
-    customerService: reviewForm.customerServ.value,
-    knowledge: reviewForm.knowledgeable.value,
-    productSel: reviewForm.productSelection.value
+    affordability: Number(reviewForm.affordability.value),
+    customerService: Number(reviewForm.customerServ.value),
+    knowledge: Number(reviewForm.knowledgeable.value),
+    productSel: Number(reviewForm.productSelection.value),
+    details: Number(reviewForm.details.value),
   })
 }

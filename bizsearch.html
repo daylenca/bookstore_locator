@@ -48,12 +48,6 @@
     </div>
     <div id="details-go-here"></div>
     <div id="reviewSection">
-        <span class="heading">Average User Rating</span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
         <button onclick="openForm()">Add Review</button>
         <div class="form-popup" id="reviewForm">
             <form class="form-container" id="reviewAdd">
@@ -98,6 +92,11 @@
                         <input type="radio" value="4" name="knowledgeable"/>
                         <input type="radio" value="5" name="knowledgeable"/>
                     </fieldset>
+                <div class="ratingCategory">
+                    <textarea rows="5" cols="35" name="details">
+                        Enter details here.
+                    </textarea>
+                </div>
                 </div>
                 <br/>
                 <button type="button" id="postReview" class="btn click" onclick="closeForm()">Submit</button>
