@@ -43,19 +43,19 @@ function closeForm() {
   document.getElementById('reviewForm').style.display = 'none';
 }
 
-const postRev = document.querySelector('#reviewForm');
-postRev.addEventListener('submit', (e) => {
-    e.preventDefault;
+const postRev = document.querySelector('#postReview');
+postRev.addEventListener('click', (e) => {
     addReview();
+    console.log("review sent.");
 });
 
- 
+const reviewForm = document.querySelector('#reviewAdd');
 function addReview() {
-  firebase.collection("reviews").add({
+    db.collection('reviews').add({
     bizID: id,
-    affordability: review.affordability.value,
-    customerService: review.customerServ.value,
-    knowledge: review.knowledgeable.value,
-    productSel: review.productSelection.value,
+    affordability: reviewForm.affordability.value,
+    customerService: reviewForm.customerServ.value,
+    knowledge: reviewForm.knowledgeable.value,
+    productSel: reviewForm.productSelection.value
   })
-};
+}
