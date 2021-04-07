@@ -3,6 +3,7 @@
     margin: 0 auto; /* Center website */
     max-width: 800px; /* Max width */
     padding: 20px;
+    text-align: center;
 }
 
 h1 {
@@ -71,15 +72,17 @@ h1 {
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 50%;
-  right: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
+  max-width: 100%;
   padding: 10px;
   background-color: white;
 }
