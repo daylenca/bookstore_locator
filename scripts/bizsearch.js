@@ -14,7 +14,7 @@ function getDetails() {
   console.log(id);
   // use this ID to read from firestore
   db.collection('businesses')
-  .doc(id)   //webcam ID that we extracted
+  .doc(id)
   .get()
   .then(function(doc){   // display details!
       var name = doc.data().name;
@@ -57,6 +57,27 @@ function addReview() {
     customerService: Number(reviewForm.customerServ.value),
     knowledge: Number(reviewForm.knowledgeable.value),
     productSel: Number(reviewForm.productSelection.value),
-    details: Number(reviewForm.details.value),
+    details: reviewForm.details.value
   })
 }
+
+const otherReviews = document.querySelector("otherReviews");
+function fetchReviews() {
+  db.collection('reviews')
+  .where('bizID', '==', id)
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      var afford = doc.data().affordability;
+      var customerServ = doc.data().customerService;
+      var knowledge = doc.data().knowledge;
+      var productSel = doc.data().productSel;
+      var details = doc.data().details;
+      $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<h2 id='username'>" + "USERNAME" + "</h2>" + "<span id='timestamp'>" 
+          + "DATE TIME STAMP HERE" + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability: " + afford + "</div>" + "<div id='customer'>" 
+          + "Customer Service: " + customerServ + "</div>" + "<div id='knowledge'>" + "Knowledge: " + knowledge + "</div>" 
+          + "<div id='product'>" + "Product Selection: " + productSel + "</div>" + "</div>" + "<div id='detailedRev'>" + "<span id='reviewText'>" + details + "</span>" + "</div>");
+    });
+  });
+}
+fetchReviews()

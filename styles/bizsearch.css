@@ -1,11 +1,61 @@
+
+/* REVIEW SECTION */
 #reviewSection {
-    font-family: Arial;
-    margin: 0 auto; /* Center website */
-    max-width: 800px; /* Max width */
-    padding: 20px;
-    text-align: center;
+  font-family: Arial;
+  margin: 0 auto; /* Center website */
+  max-width: 800px; /* Max width */
+  padding: 20px;
+  text-align: center;
 }
 
+#otherReviews {
+  margin: 0 auto; /* Center website */
+  max-width: 800px; /* Max width */
+  margin-bottom: 10px;
+}
+
+#review {
+  margin-bottom: 20px;
+  background-color: #160f29;
+}
+
+#timestamp {
+  float: left;
+  margin-left: 5px;
+}
+
+#username {
+  float: right;
+  margin-right: 5px;
+}
+
+#criteria {
+  display: inline-flex;
+  color: black;
+  width: 80%;
+}
+
+#criteria > div {
+  text-align: center;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+#detailedRev {
+  background-color: #f3DFC1;
+  color: black;
+  padding: 5px;
+  width: 100%;
+}
+
+#reviewText {
+  text-align: center;
+}
+
+
+/* OTHER SECTION */
 h1 {
   text-align: center;
 }
