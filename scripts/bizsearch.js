@@ -49,6 +49,7 @@ postRev.addEventListener('click', (e) => {
     console.log("review sent.");
 });
 
+//Add review to firebase from pop-up review form on bizsearch page.
 const reviewForm = document.querySelector('#reviewAdd');
 function addReview() {
     db.collection('reviews').add({
@@ -57,10 +58,22 @@ function addReview() {
     customerService: Number(reviewForm.customerServ.value),
     knowledge: Number(reviewForm.knowledgeable.value),
     productSel: Number(reviewForm.productSelection.value),
-    details: reviewForm.details.value
-  })
+    details: reviewForm.details.value,
+    ratingTotal: Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
+    + Number(reviewForm.productSelection.value))),
+    avgRating: Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
+        + Number(reviewForm.productSelection.value))/ 4),
+  });
+    const ratingTotal =  Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
+    + Number(reviewForm.productSelection.value)))
+    db.collection('businesses').doc(id).update({
+    reviewCount: firebase.firestore.FieldValue.increment(1),
+    ratingTotal: firebase.firestore.FieldValue.increment(ratingTotal)
+  });
+    //console.log("Rating Total Added");
 }
 
+//Fetches reviews for business by doc ID, displays them on page.
 const otherReviews = document.querySelector("otherReviews");
 function fetchReviews() {
   db.collection('reviews')
@@ -81,3 +94,16 @@ function fetchReviews() {
   });
 }
 fetchReviews()
+
+//Fetches scores from reviews collection by ID, calculates average then displays them on page.
+function calcAvgBizRating() {
+    db.collection("businesses").doc(id).get().then(function(doc) {
+        var revCount = doc.data().reviewCount;
+        var rateTotal = doc.data().ratingTotal;
+        console.log(rateTotal);
+        console.log(revCount);
+        var averageRate = ((rateTotal/revCount)/4);
+        $('#avgRating').append("<div id='average'>" + "<p>" + "Avg. Review Score: " + averageRate + "</p>" + "</div>");
+      });
+}
+calcAvgBizRating();

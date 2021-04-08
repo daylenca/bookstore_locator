@@ -11,5 +11,3 @@ const businessForm = document.querySelector('#addBusinessForm');
       website: businessForm.inputWebsite.value,
     });
   })
-
-  
