@@ -13,7 +13,7 @@ html, body {
 .footer,
 .push {
   height: 100px;
-}
+} 
 
 /* REVIEW SECTION */
 #reviewSection {
@@ -21,13 +21,18 @@ html, body {
   margin: 0 auto; /* Center website */
   max-width: 800px; /* Max width */
   padding: 20px;
-  text-align: center;
+  text-align: left;
+  background-color: #368F8B;
+  border: 5px solid #160F29;
 }
 
 #otherReviews {
   margin: 0 auto; /* Center website */
   max-width: 800px; /* Max width */
   margin-bottom: 10px;
+  background-color: #368F8B;
+  border: 5px solid #160F29;
+  padding: 20px ;
 }
 
 #review {
@@ -48,7 +53,6 @@ html, body {
 #criteria {
   display: inline-flex;
   color: black;
-  width: 80%;
 }
 
 #criteria > div {
@@ -64,10 +68,6 @@ html, body {
   color: black;
   padding: 5px;
   width: 100%;
-}
-
-#reviewText {
-  text-align: center;
 }
 
 /*BIZ INFO SECTION*/
@@ -95,12 +95,14 @@ h1 {
 .form-popup {
   display: none;
   position: fixed;
-  top: 48%;
+  top: 50%;
   left: 50%;
-  transform: translate(-48%, -50%);
-  width: 60%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   border: 3px solid #f1f1f1;
   z-index: 10;
+  height: auto;
+  overflow-y: scroll;
 }
 
 /* Add styles to the form container */
@@ -179,14 +181,3 @@ input:checked ~ label {
   float: right;
 }
 
-
-/* Responsive layout - make the columns stack on top of each other instead of next to each other */
-@media (max-width: 400px) {
-  .side, .middle {
-    width: 100%;
-  }
-  /* Hide the right column on small screens */
-  .right {
-    display: none;
-  }
-}

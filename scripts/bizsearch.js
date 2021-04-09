@@ -71,7 +71,9 @@ function addReview() {
     ratingTotal: firebase.firestore.FieldValue.increment(ratingTotal)
   });
     //console.log("Rating Total Added");
+    alert("Review Submission Success! Thank you for your review :)");
 }
+
 
 //Fetches reviews for business by doc ID, displays them on page.
 const otherReviews = document.querySelector("otherReviews");
@@ -103,7 +105,7 @@ function calcAvgBizRating() {
         console.log(rateTotal);
         console.log(revCount);
         var averageRate = ((rateTotal/revCount)/4);
-        $('#avgRating').append("<div id='average'>" + "<p>" + "Avg. Review Score: " + averageRate + "</p>" + "</div>");
+        $('#avgRating').append("<div id='average'>" + "<p>" + "Avg. Review Score: " + averageRate.toFixed(2) + "</p>" + "</div>");
       });
-}
+    }
 calcAvgBizRating();

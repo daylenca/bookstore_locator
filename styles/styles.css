@@ -2,31 +2,17 @@
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #296A72;
 }
-
 .wrapper {
-    min-height: 100%;
+min-height: 100%;
   
-    /* Equal to height of footer */
-    /* But also accounting for potential margin-bottom of last child */
-    margin-bottom: -50px;
+/* Equal to height of footer */
+/* But also accounting for potential margin-bottom of last child */
+margin-bottom: -50px;
 }
-  .footer,
-  .push {
+
+.footer, .push {
     height: 100px;
-}
-
-
-/* Adds a bottom margin to the intro container on index.html */
-#intro {
-    margin-bottom: 20pt;
-}
-
-/* Aligns map search bar to the right (not working) */
-.input-group {
-    position: absolute;
-    float: right;
 }
 
 /* Set the size of the div element that contains the map */
