@@ -22,3 +22,7 @@ margin-bottom: -50px;
     width: 100%;
     /* The width is the width of the web page */
   }
+
+#reset {
+    background-color: red;
+}

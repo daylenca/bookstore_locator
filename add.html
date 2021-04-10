@@ -56,16 +56,16 @@
         <div class="form-row">
           <div class="form-group col-md-7">
             <label for="BusinessName">Business Name</label>
-            <input type="text" class="form-control" name="inputBusinessName" placeholder="Business Name">
+            <input type="text" class="form-control" name="inputBusinessName" placeholder="Business Name" required>
         </div>
         <div class="form-group col-md-7">
           <label for="Address">Address</label>
-          <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
+          <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-7">
             <label for="City">City</label>
-            <input type="text" class="form-control" name="inputCity" placeholder="Vancouver">
+            <input type="text" class="form-control" name="inputCity" placeholder="Vancouver" required>
           </div>
           <div class="form-group col-md-3">
             <label for="Province">Province/Territory</label>
@@ -88,21 +88,22 @@
           </div>
           <div class="form-group col-md-3">
             <label for="PostalCode">Postal Code</label>
-            <input type="text" class="form-control" name="inputPostalCode" placeholder="A3B3C3">
+            <input type="text" class="form-control" name="inputPostalCode" placeholder="A3B3C3" required>
           </div>
           <div class="form-group col-md-3">
             <label for="PhoneNumber">Phone Number</label>
-            <input type="tel" pattern="^\d{10}$" class="form-control" name="inputPhoneNumber" placeholder="1234567890">
+            <input type="tel" pattern="^\d{10}$" class="form-control" name="inputPhoneNumber" placeholder="1234567890" required>
           </div>
           <div class="form-group col-md-7">
             <label for="Website">Website</label>
-            <input type="url" class="form-control" name="inputWebsite" placeholder="https://www.businesswebsite.com">
+            <input type="url" class="form-control" name="inputWebsite" placeholder="https://www.businesswebsite.com" required>
           </div>
         </div>
         <div class="form-group">
         </div>
         <br/>
-        <button type="submit" class="btn click">Submit</button>
+        <button id="submit" type="submit" class="btn click">Submit</button>
+        <button id="reset" type="reset" class="btn click">Clear Form</button>
       </form>
     </div>
   <div class="push"></div>
@@ -134,12 +135,11 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
     <script src="scripts/firebase-api-bookstore.js"></script>
-    <script src="scripts/add.js"></script>
+    <script src="scripts/map.js"></script>
     <script src="scripts/user.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

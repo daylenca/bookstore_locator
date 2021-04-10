@@ -17,6 +17,18 @@ function getDetails() {
   .doc(id)
   .get()
   .then(function(doc){   // display details!
+      var photoList = doc.data().photo;
+      for(i = 0; i < photoList.length; i++) {
+        var src = photoList[i];
+        if (i == 0) {
+        $(".carousel-inner").append("<div class='carousel-item active'></div>");
+        $(".carousel-item").append("<img class='d-block w-100' alt='Third slide' src='" + src + "'>");
+        } else {
+          $(".carousel-inner").append("<div class='carousel-item' id='" + i + "'>" + "</div>");
+          $("#" + i).append("<img class='d-block w-100' alt='Third slide' src='" + src + "'>");
+        }
+
+      }
       var name = doc.data().name;
       var address = doc.data().streetAddress;
       var city = doc.data().city; 
