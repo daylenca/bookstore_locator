@@ -54,6 +54,7 @@ const reviewForm = document.querySelector('#reviewAdd');
 function addReview() {
     db.collection('reviews').add({
     bizID: id,
+    userID: firebase.auth().currentUser.displayName,
     affordability: Number(reviewForm.affordability.value),
     customerService: Number(reviewForm.customerServ.value),
     knowledge: Number(reviewForm.knowledgeable.value),
@@ -63,6 +64,7 @@ function addReview() {
     + Number(reviewForm.productSelection.value))),
     avgRating: Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
         + Number(reviewForm.productSelection.value))/ 4),
+    postDate: firebase.firestore.Timestamp.now(),
   });
     const ratingTotal =  Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
     + Number(reviewForm.productSelection.value)))
@@ -88,8 +90,10 @@ function fetchReviews() {
       var knowledge = doc.data().knowledge;
       var productSel = doc.data().productSel;
       var details = doc.data().details;
-      $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<h2 id='username'>" + "USERNAME" + "</h2>" + "<span id='timestamp'>" 
-          + "DATE TIME STAMP HERE" + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability: " + afford + "</div>" + "<div id='customer'>" 
+      var timestamp = doc.data().postDate.toDate()  ;
+      var user = doc.data().userID;
+      $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<h2 id='username'>" + user + "</h2>" + "<span id='timestamp'>" 
+          + timestamp + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability: " + afford + "</div>" + "<div id='customer'>" 
           + "Customer Service: " + customerServ + "</div>" + "<div id='knowledge'>" + "Knowledge: " + knowledge + "</div>" 
           + "<div id='product'>" + "Product Selection: " + productSel + "</div>" + "</div>" + "<div id='detailedRev'>" + "<span id='reviewText'>" + details + "</span>" + "</div>");
     });
