@@ -15,6 +15,36 @@ html, body {
   height: 100px;
 } 
 
+/* BIZ INFO SECTION */
+
+#bizInfo {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  margin: 0 auto; /* Center website */
+  max-width: 800px; /* Max width */
+  margin-bottom: 10px;
+  background-color: #368F8B;
+  border: 5px solid #160F29;
+  padding: 20px ;
+}
+
+h1 {
+  text-align: center;
+}
+
+#address {
+  text-align: left;
+  grid-column: 1/2;
+  font-size: 1em;
+  background-color: #368F8B;
+  padding: 10px;
+}
+
+#gallery {
+  grid-column: 2/3;
+}
+
+
 /* REVIEW SECTION */
 #reviewSection {
   font-family: Arial;
@@ -70,27 +100,8 @@ html, body {
   width: 100%;
 }
 
-/*BIZ INFO SECTION*/
-h1 {
-  text-align: center;
-}
-
-.heading {
-  font-size: 25px;
-  margin-right: 25px;
-}
-
-.fa {
-  font-size: 25px;
-}
-
-.checked {
-  color: orange;
-}
-
 /* Pop-up Review Form
 /* Button used to open the contact form - fixed at the bottom of the page */
-
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -181,3 +192,4 @@ input:checked ~ label {
   float: right;
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

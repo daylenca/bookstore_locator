@@ -8,6 +8,7 @@
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,10 +50,15 @@
             </div>
      </nav>
     <div class="wrapper">
-    <div id="title" class="container">
-        <h1 class="display-4">Local Bookstores</h1>
+        <h1 class="display-4" id="bizName">Local Bookstores</h1>
+    <div id="bizInfo">
+        <div id="address">
+            <h2>Basic Info</h2>
+        </div>
+        <div id="gallery">
+            <img id="bizPhoto" src="//bookstore-locator-app.appspot.com/32books/32books1.jpg" alt="...">
+          </div>
     </div>
-    <div id="details-go-here"></div>
     <div id="reviewSection">
         <div id="revHeader">
         <h2>REVIEWS</h2>
@@ -135,7 +141,6 @@
           </div>
     </div>
     <div id="otherReviews">
-                <div id="businesses-go-here"></div>
             </div>
             </div>
             <footer>
@@ -170,7 +175,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="scripts/firebase-api-bookstore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/bizsearch.js"></script>
     <script src="scripts/user.js"></script>
 </body>

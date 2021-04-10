@@ -24,13 +24,17 @@ function getDetails() {
       var pCode = doc.data().postalCode; 
       var phone = doc.data().phoneNumber; 
       var website = doc.data().website; 
-      $('#details-go-here').append('<h1> ' + name + '</h1>');
-      $('#details-go-here').append('<h1> ' + address + '</h1>');
-      $('#details-go-here').append('<h1> ' + city + '</h1>');
-      $('#details-go-here').append('<h1>' + province + '</h1>');
-      $('#details-go-here').append('<h1>' + pCode + '</h1>');
-      $('#details-go-here').append('<h1>' + phone + '</h1>');
-      $('#details-go-here').append('<h1>' + website + '</h1>');
+      $('#bizName').text(name);
+      $('#address').append('<p>' + address + '</p>');
+      $('#address').append('<p>' + city + '</p>');
+      $('#address').append('<p>' + province + '</p>');
+      $('#address').append('<p>' + pCode + '</p>');
+      $('#address').append('<p>' + phone + '</p>');
+      var link = $("<a>");
+                link.attr("href", website);
+                link.text(website);
+                link.addClass("link");
+      $('#address').append(link);
   })
 }
 getDetails();
@@ -99,7 +103,7 @@ function fetchReviews() {
     });
   });
 }
-fetchReviews()
+fetchReviews();
 
 //Fetches scores from reviews collection by ID, calculates average then displays them on page.
 function calcAvgBizRating() {
