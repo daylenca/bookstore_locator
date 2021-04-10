@@ -21,6 +21,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">LocalReads</a>
+            <a class="navbar-text">Welcome, <span id="userID">Guest</span></a>
             <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
@@ -78,6 +79,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <script src="scripts/firebase-api-bookstore.js"></script>
+    <script src="scripts/user.js"></script>
     <script>
         function userInfo(){
             db.collection("users").get()
