@@ -9,10 +9,11 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Optional styles and scripts of your own -->
     <link href="styles/bootstrap-color.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -55,7 +56,7 @@
         <div class="input-group">
             <label for="search-box">Search&nbsp;</label>
             <div class="form-outline">
-                <input type="search" id="search-box" class="form-control"/>
+                <input type="text" id="city" class="form-control"/>
             </div>
             <button type="button" class="btn click">
                 <i class="bi bi-search"></i>
@@ -104,7 +105,7 @@
     <script>
         function getBusiness(){
             document.getElementById("submit").addEventListener('click', function () {
-                var id = document.getElementById("id").value;
+                var id = document.getElementById("city").value;
                 console.log(id);
             db.collection("businesses")
             .where("name", "==", location)
@@ -117,7 +118,7 @@
             })
             })
         }
-        getCity();
+        getBusiness();
     </script>
 </body>
 
