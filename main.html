@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>LocalReads</title>
     <meta name="author" content="Cody and Daylen">
-    <link href="styles/styles.css" rel="stylesheet">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,13 +12,14 @@
 
     <!-- Optional styles and scripts of your own -->
     <link href="styles/bootstrap-color.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LocalReads</a>
+            <a class="navbar-brand" href="index.html">LocalReads</a>
             <a class="navbar-text">Welcome, <span id="userID">Guest</span></a>
             <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
         <div class="input-group">
             <label for="search-box">Search&nbsp;</label>
             <div class="form-outline">
-                <input type="search" id="search-box" class="form-control"/>
+                <input type="text" id="city" class="form-control " placeholder="City or Postal Code"/>
             </div>
             <button type="button" class="btn click">
                 <i class="bi bi-search"></i>

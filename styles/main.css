@@ -5,21 +5,28 @@ html, body {
 }
 .wrapper {
   min-height: 100%;
-
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
+/* Equal to height of footer */
+/* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
 }
-.footer,
-.push {
-  height: 25px;
+
+/* Changes form and search field shadow from blue to sand */
+.form-control:focus {
+  border-color: #DCBDA7;
+  box-shadow: 0 0 0 0.1rem #DCBDA7;
+} 
+
+.footer, .push {
+  height: 100px;
 }
 
 /* Set the size of the div element that contains the map */
 #map {
-  height: 505px;
-  /* The height is 400 pixels */
+  height: 390px;
   width: 100%;
-  /* The width is the width of the web page */
+  margin-top: 10pt;
 }
 
+#reset {
+  background-color: red;
+}
