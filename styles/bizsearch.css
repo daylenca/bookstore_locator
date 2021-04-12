@@ -15,34 +15,28 @@ html, body {
   height: 100px;
 } 
 
+h1 {
+  text-align: center;
+}
+
 /* BIZ INFO SECTION */
 
+
 #bizInfo {
-  display: grid;
-  grid-template-columns: 30% 60%;
-  justify-content: center;
   margin: 0 auto; /* Center website */
   max-width: 800px; /* Max width */
   margin-bottom: 10px;
   background-color: #368F8B;
   border: 5px solid #160F29;
   padding: 20px ;
-}
-
-h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+
 #address {
-  text-align: left;
-  grid-column: 1/2;
   font-size: 1em;
   background-color: #368F8B;
   padding: 10px;
-}
-
-#gallery {
-  grid-column: 2/3;
 }
 
 #afford, #customer, #product, #knowledge {
@@ -59,7 +53,7 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto; /* Center website */
   max-width: 800px; /* Max width */
   padding: 20px;
-  text-align: left;
+  text-align: center;
   background-color: #368F8B;
   border: 5px solid #160F29;
 }
@@ -211,3 +205,29 @@ input:checked ~ label {
   color: gold;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*MEDIA QUERIES*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Tablet:768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 26px; 
+   }
+ }
+
+ h2 {
+  font-size: 24px; 
+ }
+}
+ 
+/* Mobile :320px. */
+@media (max-width: 767px) {
+  h2 {
+    font-size: 20px; 
+   }
+ } 
+  
+  p {
+    font-size: 18px;
+    margin: 0px;
+   }
+ }

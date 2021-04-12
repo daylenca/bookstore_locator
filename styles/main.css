@@ -23,3 +23,17 @@ html, body {
   /* The width is the width of the web page */
 }
 
+/* Tablet:768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 26px; 
+   }
+ }
+ 
+/* Mobile :320px. */
+@media (max-width: 767px) {
+   p {
+    font-size: 24px;
+   }
+ }
+
