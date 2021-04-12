@@ -1,16 +1,18 @@
-body {
-    background-color: #296A72;
+/* Wrapper to prevent bottom nav bar from hiding content*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.wrapper {
+min-height: 100%;
+  
+/* Equal to height of footer */
+/* But also accounting for potential margin-bottom of last child */
+margin-bottom: -50px;
 }
 
-/* Adds a bottom margin to the intro container on index.html */
-#intro {
-    margin-bottom: 20pt;
-}
-
-/* Aligns map search bar to the right (not working) */
-.input-group {
-    position: absolute;
-    float: right;
+.footer, .push {
+    height: 100px;
 }
 
 /* Set the size of the div element that contains the map */
@@ -20,3 +22,7 @@ body {
     width: 100%;
     /* The width is the width of the web page */
   }
+
+#reset {
+    background-color: red;
+}
