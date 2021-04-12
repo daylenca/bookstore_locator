@@ -88,7 +88,7 @@ function addReview() {
     reviewCount: firebase.firestore.FieldValue.increment(1),
     ratingTotal: firebase.firestore.FieldValue.increment(ratingTotal)
   });
-    //console.log("Rating Total Added");
+    console.log("Rating Total Added");
     alert("Review Submission Success! Thank you for your review :)");
 }
 
@@ -106,12 +106,12 @@ function fetchReviews() {
       var knowledge = doc.data().knowledge;
       var productSel = doc.data().productSel;
       var details = doc.data().details;
-      var timestamp = doc.data().postDate.toDate()  ;
+      var timestamp = doc.data().postDate.toDate().toDateString()  ;
       var user = doc.data().userID;
-      $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<h2 id='username'>" + user + "</h2>" + "<span id='timestamp'>" 
-          + timestamp + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability: " + afford + "</div>" + "<div id='customer'>" 
-          + "Customer Service: " + customerServ + "</div>" + "<div id='knowledge'>" + "Knowledge: " + knowledge + "</div>" 
-          + "<div id='product'>" + "Product Selection: " + productSel + "</div>" + "</div>" + "<div id='detailedRev'>" + "<span id='reviewText'>" + details + "</span>" + "</div>");
+      $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<span id='username'>" + user + "</span>" + "<span id='timestamp'>" 
+          + timestamp + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability " + afford + "</div>" + "<div id='customer'>" 
+          + "Customer Service " + customerServ + "</div>" + "<div id='knowledge'>" + "Knowledge " + knowledge + "</div>"
+          + "<div id='product'>" + "Product Selection " + productSel + "</div>" + "</div>" + "<div id='detailedRev'>" + "<span id='reviewText'>" + details + "</span>" + "</div>");
     });
   });
 }

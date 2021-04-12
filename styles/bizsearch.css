@@ -29,7 +29,7 @@ html, body {
   padding: 20px ;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
@@ -43,6 +43,13 @@ h1 {
 
 #gallery {
   grid-column: 2/3;
+}
+
+#afford, #customer, #product, #knowledge {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: white;
+  width: 100%;
 }
 
 
@@ -67,31 +74,28 @@ h1 {
 }
 
 #review {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #160f29;
 }
 
 #timestamp {
-  float: left;
-  margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
+  font-size: 12px;
+  float: right;
 }
 
 #username {
-  float: right;
-  margin-right: 5px;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 #criteria {
   display: inline-flex;
   color: black;
-}
-
-#criteria > div {
-  text-align: center;
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
+  flex-flow: row;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 #detailedRev {
@@ -101,34 +105,32 @@ h1 {
   width: 100%;
 }
 
-/* Pop-up Review Form
-/* Button used to open the contact form - fixed at the bottom of the page */
-/* The popup form - hidden by default */
+/* Pop-up Review Form*/
 .form-popup {
   display: none;
   position: fixed;
+  transform: translate(-50%, -60%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  border: 3px solid #f1f1f1;
+  width: 95%;
+  height: 72.3%;
+  overflow: scroll;
   z-index: 10;
-  height: auto;
-  overflow-y: scroll;
+  text-align: center;
+  border: 5px solid #DDBEA8;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 100%;
-  height: 90%;
-  padding: 10px;
-  background-color: white;
+  width: 100%;
+  height: auto;
+  background-color: #160F29;
+  margin: auto;
 }
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
-  padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
@@ -138,6 +140,7 @@ h1 {
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+  width: 100%;
 }
 
 /* Set a style for the submit/login button */
@@ -148,8 +151,39 @@ h1 {
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
   opacity: 0.8;
+}
+
+#reviewSelectors {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-content: center;
+  justify-content: center;
+}
+
+#categories > h5{
+  grid-column: 1/2;
+  font-size: 0.9rem;
+  margin: 5px;
+}
+
+.ratingCategory{
+  grid-column: 2/3;
+}
+
+#textreview {
+  margin-top: 10px;
+  grid-column: 1/span 2;
+}
+
+textarea {
+  grid-column: 1/ span 2;
+  resize: none;
+  width: 90%;
+}
+
+fieldset {
+  margin-top: 1.5px;
 }
 
 /* Add some hover effects to buttons */
@@ -162,35 +196,18 @@ h1 {
   background-color: red;
 }
 
-.ratingCategory > h3 {
-  margin-bottom: 0px;
-}
-
-#reviewAdd > h5 {
-  color: black;
-}
-
 /*Stars*/
 input {
   display: none;
 }
 
 label {
-  font-size: 30px;
+  font-size: 0.9rem;
   float: right;
-  margin-right: 17px;
+  margin-right: 12px;
 }
 
 input:checked ~ label {
   color: gold;
 }
-
-#reviewSelectors {
-  float:left;
-}
-
-.textReview {
-  float: right;
-}
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

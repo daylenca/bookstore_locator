@@ -75,17 +75,21 @@
         <div id="revHeader">
         <h2>REVIEWS</h2>
         <div id="avgRating"></div>
-        <button onclick="openForm()">+ Add Review</button>
+        <button id="reviewButton" onclick="openForm()">+ Add Review</button>
         </div>
         <div class="form-popup" id="reviewForm">
             <form class="form-container" id="reviewAdd">
               <h1>Leaving a Review</h1>
-              <h5>1 = Poor, 2 = Below Average, 3 = Fair, 4 = Good, 5 = Excellent</h5>
               <div id="reviewSelectors">
+                <div id="categories">
+                    <h5>Affordability</h5>
+                    <h5>Product Selection</h5>
+                    <h5>Customer Service</h5>
+                    <h5>Knowledgeable</h5>
+                </div>
                 <div class="ratingCategory">
-                    <h3>Affordability</h3>
                     <fieldset id="affordability">
-                        <input type="radio" id="a5" value="5" name="affordability"/>
+                        <input type="radio" id="a5" value="5" name="affordability" required/>
                         <label for="a5">&#10038;</label>
                         <input type="radio" id="a4" value="4" name="affordability"/>
                         <label for="a4">&#10038;</label>
@@ -96,11 +100,10 @@
                         <input type="radio" id="a1" value="1" name="affordability"/>
                         <label for="a1">&#10038;</label>
                     </fieldset>
-                </div>
                 <div class="ratingCategory">
-                    <h3>Product Selection</h3>
+                    <!-- <h5>Product Selection</h5> -->
                     <fieldset id="productSelection">
-                        <input type="radio" id="p5" value="5" name="productSelection"/>
+                        <input type="radio" id="p5" value="5" name="productSelection" required/>
                         <label for="p5">&#10038;</label>
                         <input type="radio" id="p4" value="4" name="productSelection"/>
                         <label for="p4">&#10038;</label>
@@ -111,11 +114,9 @@
                         <input type="radio" id="p1" value="1" name="productSelection"/>
                         <label for="p1">&#10038;</label>
                     </fieldset>
-                </div>
-                <div class="ratingCategory">
-                    <h3>Customer Service</h3>
+                    <!-- <h5>Customer Service</h5> -->
                     <fieldset id="customerService">
-                        <input type="radio" id="c5" value="5" name="customerServ"/>
+                        <input type="radio" id="c5" value="5" name="customerServ" required/>
                         <label for="c5">&#10038;</label>
                         <input type="radio" id="c4" value="4" name="customerServ"/>
                         <label for="c4">&#10038;</label>
@@ -126,11 +127,9 @@
                         <input type="radio" id="c1" value="1" name="customerServ"/>
                         <label for="c1">&#10038;</label>
                     </fieldset>
-                </div>
-                <div class="ratingCategory">
-                    <h3>Knowledgeable</h3>
+                    <!-- <h5>Knowledgeable</h5> -->
                     <fieldset id="knowledgeable">
-                        <input type="radio" id="k5" value="5" name="knowledgeable"/>
+                        <input type="radio" id="k5" value="5" name="knowledgeable" required/>
                         <label for="k5">&#10038;</label>
                         <input type="radio" id="k4" value="4" name="knowledgeable"/>
                         <label for="k4">&#10038;</label>
@@ -142,12 +141,13 @@
                         <label for="k1">&#10038;</label>
                     </fieldset>
                 </div>
+                </div>
             </div>
                 <div class="textReview">
-                    <textarea name="details" placeholder="Write your review here!"></textarea>
+                    <textarea rows="6" columns="30"name="details" placeholder="Write your review here!"></textarea>
                 </div>
                 <br/>
-                <button type="button" id="postReview" class="btn click" onclick="closeForm()">Submit</button>
+                <button type="button" id="postReview" class="btn click" onclick="closeForm();">Submit</button>
                 <button type="reset" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
           </div>
