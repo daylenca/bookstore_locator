@@ -53,6 +53,14 @@
         <a role="button" href="login.html" class="btn click">Login/Register</a>
     </div>
     <div id="mapbox" class="container">
+        <div class="tbm_shop_local" data-options="
+                {
+                    'api_key' : 'gZoyA9eZXZbHDNxvr6EY1Jz6fzpZxD9a', 
+                    'product_code' : '0771051557', 
+                    'request_location' : 'true'
+                    'enable_dropdown' : 'true'
+                }" 
+            />
         <div class="input-group">
             <label for="search-box">Search&nbsp;</label>
             <div class="form-outline">
@@ -101,6 +109,8 @@
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmly4dsny5PxlNnvAuHjwXM5iVE6_psCA&callback=initMap">
     </script>
+    <!-- Bookmanager API -->
+    <script src="https://bookmanager.com/public/api/tbm-shop-local.js" ></script>
     <!-- Search functionality -->
     <script>
         function getBusiness(){
