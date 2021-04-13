@@ -27,6 +27,10 @@ html, body {
   margin-top: 10pt;
 }
 
+label {
+  margin-top: 10px;
+}
+
 #reset {
   background-color: red;
 }
