@@ -25,6 +25,7 @@ p {
 }
 
 p:hover {
+  color: #1C162D;
   background-color: #DDBEA8;
 }
 
