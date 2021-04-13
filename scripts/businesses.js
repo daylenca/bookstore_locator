@@ -1,3 +1,5 @@
+//Fetches business collection, appends a new div element on page for each business document
+//Displays in alphabetical order.
 function displayBusinesses(){
     db.collection("businesses")
     .orderBy('name')
@@ -13,6 +15,7 @@ function displayBusinesses(){
 }
 displayBusinesses();
 
+//Click listener for dynamically appended to redirect user to new url for that business.
 function addBusinessListener(id) {
     document.getElementById(id)
       .addEventListener("click", function() {

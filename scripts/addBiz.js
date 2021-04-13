@@ -1,3 +1,4 @@
+//Writes inputs from Add Business form to Businesses collection in firebase.
 const businessForm = document.querySelector('#addBusinessForm');
   businessForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -10,4 +11,5 @@ const businessForm = document.querySelector('#addBusinessForm');
       phoneNumber: businessForm.inputPhoneNumber.value,
       website: businessForm.inputWebsite.value,
     });
+    alert("Business information has been sent! Thank you for your submission.");
   })

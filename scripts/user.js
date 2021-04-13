@@ -1,3 +1,5 @@
+//Listener if user is logged in or guest. Changes hambuger links/buttons available depending
+//on the state.
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var userID = firebase.auth().currentUser.displayName;
@@ -9,6 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+//Logs out the current user from firebase auth.
 function logout() {
   firebase.auth().signOut()
   console.log("User signed out.")
