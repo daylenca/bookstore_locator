@@ -72,7 +72,6 @@ function closeForm() {
 const postRev = document.querySelector('#postReview');
 postRev.addEventListener('click', (e) => {
     addReview();
-    console.log("review sent.");
 });
 
 //Add review function, adds review to firebase from pop-up review form on bizsearch page.
@@ -102,7 +101,6 @@ function addReview() {
     reviewCount: firebase.firestore.FieldValue.increment(1),
     ratingTotal: firebase.firestore.FieldValue.increment(ratingTotal)
   });
-    console.log("Rating Total Added");
     alert("Review Submission Success! Thank you for your review :)");
 }
 
@@ -136,8 +134,6 @@ function calcAvgBizRating() {
     db.collection("businesses").doc(id).get().then(function(doc) {
         var revCount = doc.data().reviewCount;
         var rateTotal = doc.data().ratingTotal;
-        console.log(rateTotal);
-        console.log(revCount);
         var averageRate = ((rateTotal/revCount)/4);
         $('#avgRating').append("<div id='average'>" + "<p>" + "Avg. Review Score: " + averageRate.toFixed(2) + "</p>" + "</div>");
       });

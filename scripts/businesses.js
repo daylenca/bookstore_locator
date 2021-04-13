@@ -19,7 +19,6 @@ displayBusinesses();
 function addBusinessListener(id) {
     document.getElementById(id)
       .addEventListener("click", function() {
-          console.log(id + "was clicked!");
           //window.location.href="details.html";
           window.location.href="bizsearch.html?id=" + id;
       });

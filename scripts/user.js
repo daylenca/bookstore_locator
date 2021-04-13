@@ -14,5 +14,4 @@ firebase.auth().onAuthStateChanged(function(user) {
 //Logs out the current user from firebase auth.
 function logout() {
   firebase.auth().signOut()
-  console.log("User signed out.")
 };
