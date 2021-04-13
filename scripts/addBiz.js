@@ -10,6 +10,8 @@ const businessForm = document.querySelector('#addBusinessForm');
       postalCode: businessForm.inputPostalCode.value,
       phoneNumber: businessForm.inputPhoneNumber.value,
       website: businessForm.inputWebsite.value,
+      reviewCount: Number(0),
+      
     });
     alert("Business information has been sent! Thank you for your submission.");
   })
