@@ -110,6 +110,7 @@ const otherReviews = document.querySelector("otherReviews");
 function fetchReviews() {
   db.collection('reviews')
   .where('bizID', '==', id)
+  .orderBy("postDate", "desc")
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -118,7 +119,7 @@ function fetchReviews() {
       var knowledge = doc.data().knowledge;
       var productSel = doc.data().productSel;
       var details = doc.data().details;
-      var timestamp = doc.data().postDate.toDate().toDateString()  ;
+      var timestamp = doc.data().postDate.toDate().toDateString();
       var user = doc.data().userID;
       $('#otherReviews').append("<div id='review'>" + "<div id='reviewHeader'>" + "<span id='username'>" + user + "</span>" + "<span id='timestamp'>" 
           + timestamp + "</span>" + "<div id='criteria'>" + "<div id='afford'>" + "Affordability " + afford + "</div>" + "<div id='customer'>" 
