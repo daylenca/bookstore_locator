@@ -47,22 +47,33 @@
         </div>
     </nav>
     <div class="wrapper">
-    <div id="intro" class="container">
-        <h1 class="display-4">Welcome to LocalReads</h1>
-    </div>
-    <div id="mapbox" class="container">
-        <div class="input-group">
-            <label for="search-box">Search&nbsp;</label>
-            <div class="form-outline">
-                <input type="text" id="address" class="form-control " placeholder="City or Postal Code" pattern="^[^}>{'\/;`%]*$"/>
-            </div>
-            <button type="button" class="btn click">
-                <i class="bi bi-search"></i>
-            </button>
+        <div id="intro" class="container">
+            <h1 class="display-4">LocalReads</h1>
+            <h2>Find independent bookstores near you</h2>
+            <a role="button" href="login.html" class="btn click">Login/Register</a>
         </div>
-        <div id="map"></div>
-    </div>
-    <div class="push"></div>
+        <div id="mapbox" class="container">
+            <div class="input-group">
+                <label for="search-box">Search&nbsp;</label>
+                <div class="form-outline">
+                    <input type="text" id="city" class="form-control " placeholder="City or Postal Code" pattern="^[^}>{'\/;`%]*$"/>
+                </div>
+                <button class="btn click" id="submit" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            <div class="tbm_shop_local" data-options="
+                    {
+                        'api_key' : 'gZoyA9eZXZbHDNxvr6EY1Jz6fzpZxD9a', 
+                        'request_location' : 'true',
+                        'distance_km' : '20',
+                        'enable_dropdown' : 'true'
+                    }" 
+                />
+                
+            <div id="map"></div>
+        </div>
+        <div class="push"></div>
     </div>
     <footer>
         <nav class="navbar fixed-bottom text-center">
@@ -94,16 +105,18 @@
     <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
     <script src="scripts/firebase-api-bookstore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/map.js"></script>
     <script src="scripts/user.js"></script>
+    <script src="scripts/map.js"></script>
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmly4dsny5PxlNnvAuHjwXM5iVE6_psCA&callback=initMap">
     </script>
+    <!-- Bookmanager API -->
+    <script src="https://bookmanager.com/public/api/tbm-shop-local.js"></script>
     <!-- Search functionality -->
     <script>
         function getBusiness(){
             document.getElementById("submit").addEventListener('click', function () {
-                var id = document.getElementById("id").value;
+                var id = document.getElementById("city").value;
                 console.log(id);
             db.collection("businesses")
             .where("name", "==", location)
@@ -116,8 +129,7 @@
             })
             })
         }
-        getCity();
+        getBusiness();
     </script>
 </body>
-
 </html>
