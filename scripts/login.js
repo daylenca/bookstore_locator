@@ -4,15 +4,13 @@
      callbacks: {
          signInSuccessWithAuthResult: function (authResult, redirectUrl) {
              // User successfully signed in.
-             // Return type determines whether we continue the redirect automatically
-             // or whether we leave that to developer to handle.
+             // Redirects user to mail.html.
              //------------------------------------------------------------------------------------------
              // The code below is modified from default snippet provided by the FB documentation.
              //
-             // If the user is a "brand new" user, then create a new "user" in your own database.
-             // Assign this user with the name and email provided.
-             // Before this works, you must enable "Firestore" from the firebase console.
-             // The Firestore rules must allow the user to write. 
+             // If the user is a "brand new" user, a new user is created in Firestore.
+             // This user is assigned with the name and email provided.
+             // The Firestore rules are configured to allow the user to write. 
              //------------------------------------------------------------------------------------------
              var user = authResult.user;
              if (authResult.additionalUserInfo.isNewUser) {         //if new user
@@ -41,17 +39,12 @@
      signInFlow: 'popup',
      signInSuccessUrl: 'main.html',
      signInOptions: [
-         // Leave the lines as is for the providers you want to offer your users.
-         //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-         //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-         //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-         //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-         firebase.auth.EmailAuthProvider.PROVIDER_ID,
-         //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+         // Only email authentication is provided at this time
+         firebase.auth.EmailAuthProvider.PROVIDER_ID
      ],
-     // Terms of service url.
+     // Terms of service url, not used.
      tosUrl: '<your-tos-url>',
-     // Privacy policy url.
+     // Privacy policy url, not used.
      privacyPolicyUrl: '<your-privacy-policy-url>'
  };
  // The start method will wait until the DOM is loaded.

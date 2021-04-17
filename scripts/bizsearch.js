@@ -1,29 +1,29 @@
-// Parses current page's URL to extract ID
+// Parse current page's URL to extract ID
 const parsedUrl = new URL(window.location.href);
 console.log(parsedUrl.searchParams.get('id')); // '123'
-// extract id from url, assign to variable
+// Extract id from url, assign to variable
 var id = parsedUrl.searchParams.get('id');
 console.log(id);
 
-//Pulls business details using parsed URL ID from "businesses" collection
+// Pulls business details using parsed URL ID from "businesses" collection
 function getDetails() {
   const parsedUrl = new URL(window.location.href);
   console.log(parsedUrl.searchParams.get('id')); // '123'
-  // extract id from url, assign to variable
+  // Extracts id from url, assigns it to variable
   var id = parsedUrl.searchParams.get('id');
   console.log(id);
-  // use this ID to read from firestore
+  // Use this id to read from Firestore
   db.collection('businesses')
   .doc(id)
   .get()
   .then(function(doc){
-      //Pulling photo array field in the specific business document
+      // Pulling photo array field in the specific business document
       var photoList = doc.data().photo;
-      //Looping through the array to pull the image host links
+      // Looping through the array to pull the image host links
       for(i = 0; i < photoList.length; i++) {
         var src = photoList[i];
         if (i == 0) {
-        //Appends new container and the image link src attribute
+        // Appends new container and the image link src attribute
         $(".carousel-inner").append("<div class='carousel-item active'></div>");
         $(".carousel-item").append("<img class='d-block w-100' alt='Third slide' src='" + src + "'>");
         } else {
@@ -68,13 +68,13 @@ function closeForm() {
   document.getElementById('reviewForm').style.display = 'none';
 }
 
-//Listener for review submit button, triggers on click.
+// Listener for review submit button, triggers on click.
 const postRev = document.querySelector('#postReview');
 postRev.addEventListener('click', (e) => {
     addReview();
 });
 
-//Add review function, adds review to firebase from pop-up review form on bizsearch page.
+// Add review function, adds review to firebase from pop-up review form on bizsearch page.
 const reviewForm = document.querySelector('#reviewAdd');
 function addReview() {
     db.collection('reviews').add({
@@ -88,13 +88,13 @@ function addReview() {
     //Calculates review form totals
     ratingTotal: Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
     + Number(reviewForm.productSelection.value))),
-    //Calculates rating average total
+    // Calculates rating average total
     avgRating: Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
         + Number(reviewForm.productSelection.value))/ 4),
-    //Creates a timestamp object of the review
+    // Creates a timestamp object of the review
     postDate: firebase.firestore.Timestamp.now(),
   });
-    //Updates rating total based on the recent, updates rating count, new biz rating total used for Average Rating calculation.
+    // Updates rating total based on the recent, updates rating count, new biz rating total used for Average Rating calculation.
     const ratingTotal =  Number((Number(reviewForm.affordability.value) + Number(reviewForm.customerServ.value) + Number(reviewForm.knowledgeable.value)
     + Number(reviewForm.productSelection.value)))
     db.collection('businesses').doc(id).update({
@@ -105,7 +105,7 @@ function addReview() {
 }
 
 
-//Fetches reviews for business by doc ID, displays them on page.
+// Fetches reviews for business by doc ID, displays them on page.
 const otherReviews = document.querySelector("otherReviews");
 function fetchReviews() {
   db.collection('reviews')
@@ -130,7 +130,7 @@ function fetchReviews() {
 }
 fetchReviews();
 
-//Fetches scores from reviews collection by ID, calculates average then displays them on page.
+// Fetches scores from reviews collection by ID, calculates average then displays them on page.
 function calcAvgBizRating() {
     db.collection("businesses").doc(id).get().then(function(doc) {
         var revCount = doc.data().reviewCount;

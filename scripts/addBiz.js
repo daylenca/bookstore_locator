@@ -1,4 +1,4 @@
-//Writes inputs from Add Business form to Businesses collection in firebase.
+// Writes inputs from Add Business form to Businesses collection in Firebase.
 const businessForm = document.querySelector('#addBusinessForm');
   businessForm.addEventListener('submit', (e) => {
     e.preventDefault();

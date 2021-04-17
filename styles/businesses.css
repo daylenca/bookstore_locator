@@ -1,4 +1,4 @@
-/* Wrapper to prevent bottom nav bar from hiding content*/
+/* Wrapper to prevent bottom nav bar from hiding content */
 html, body {
   height: 100%;
   margin: 0;
@@ -15,6 +15,7 @@ html, body {
   height: 100px;
 }
 
+/* Modifies colours to provide a better experience for mouse users */
 p {
   background-color: #160F29;
   color: #F3DFC1;

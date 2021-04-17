@@ -1,4 +1,4 @@
-/* Wrapper to prevent bottom nav bar from hiding content*/
+/* Wrapper to prevent bottom nav bar from hiding content */
 html, body {
   height: 100%;
   margin: 0;
@@ -99,7 +99,7 @@ h1 {
   width: 100%;
 }
 
-/* Pop-up Review Form*/
+/* Pop-up Review Form */
 .form-popup {
   display: none;
   position: fixed;
@@ -188,7 +188,7 @@ fieldset {
   background-color: red;
 }
 
-/*Stars*/
+/* Stars for reviews */
 input {
   display: none;
 }
@@ -203,18 +203,18 @@ input:checked ~ label {
   color: gold;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*MEDIA QUERIES*/
+/* MEDIA QUERIES */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* Tablet:768px. */
 @media (min-width: 768px){
   
   h1 {
     font-size: 26px; 
-   }
+  }
 
  h2 {
-  font-size: 24px; 
- }
+    font-size: 24px;
+  }
 }
  
 /* Mobile :320px. */
